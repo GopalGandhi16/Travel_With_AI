@@ -31,3 +31,23 @@ module.exports.createListing = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+// search locations 
+module.exports.searchLocation = async (req, res) => {
+  try {
+    const { location } = req.params;
+
+    const keywords = location.split(" ");
+
+    const listings = await Listing.find({
+      $or: [
+        { location: { $regex: keywords.join("|"), $options: "i" } },
+        { country: { $regex: keywords.join("|"), $options: "i" } }
+      ]
+    });
+
+    res.json(listings);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
