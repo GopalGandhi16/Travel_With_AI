@@ -1,17 +1,19 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-
+const authRoutes = require("./routes/user");
+const listingRoutes = require('./routes/listingsRoute');
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
 // routes import
-const listingRoutes = require('./routes/listings');
+
 
 // use routes
 app.use("/api/listings", listingRoutes);
+app.use("/api/auth", authRoutes);
 
 // DB connect
 mongoose.connect("mongodb://127.0.0.1:27017/wanderlust")

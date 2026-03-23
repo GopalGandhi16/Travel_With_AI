@@ -28,7 +28,7 @@ const Navbar = () => {
           <FaHome /> Home
         </Link>
 
-        <Link to="/" className="flex items-center gap-2 hover:text-red-500 transition">
+        <Link to="/listings" className="flex items-center gap-2 hover:text-red-500 transition">
           <FaList /> All Listings
         </Link>
 

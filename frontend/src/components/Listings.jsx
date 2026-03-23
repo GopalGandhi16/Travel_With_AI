@@ -9,12 +9,13 @@ const Listings = () => {
     axios
       .get("http://localhost:3000/api/listings")
       .then((res) => {
-        console.log(res.data); // debug
+        console.log(res.data); 
         setListings(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
+      
   }, []);
 
   return (
