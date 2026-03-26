@@ -1,51 +1,60 @@
 import { useNavigate } from "react-router-dom";
-import { FaHeart } from "react-icons/fa";
+import { Heart } from "lucide-react";
 import axios from "axios";
+import { useAuth } from "../context/AuthContext";
+import { toast } from "react-toastify";
 
 const ListingCard = ({ listing }) => {
   const navigate = useNavigate();
+  const { user } = useAuth();
 
-  // ✅ FIX: function inside component
   const handleWatchlist = async (e) => {
-    e.stopPropagation(); // ❗ stop navigation
+    e.stopPropagation();
+
+    if (!user) {
+      toast.info("Please login to add to watchlist");
+      return;
+    }
 
     try {
       await axios.post(
-        `http://localhost:3000/api/user/watchlist/${listing._id}`,
-        { userId: "USER_ID" }
+        `http://localhost:3000/api/auth/watchlist/${listing._id}`,
+        { userId: user._id }
       );
-      console.log("Added to watchlist");
+      toast.success("Added to watchlist");
     } catch (err) {
-      console.log(err);
+      toast.error("Failed to add to watchlist");
     }
   };
 
   return (
     <div
       onClick={() => navigate(`/listing/${listing._id}`)}
-      className="relative cursor-pointer bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition"
+      className="group cursor-pointer flex flex-col gap-2"
     >
-      {/* Image */}
-      <img
-        src={listing.image}
-        className="w-full h-52 object-cover"
-      />
+      <div className="relative aspect-square overflow-hidden rounded-xl bg-gray-200">
+        <img
+          src={listing.image}
+          className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300 ease-in-out"
+          alt={listing.title}
+        />
+        <button 
+          onClick={handleWatchlist}
+          className="absolute top-3 right-3 text-white hover:scale-110 active:scale-95 transition-transform"
+        >
+          <Heart className="w-6 h-6 drop-shadow-md" strokeWidth={2} />
+        </button>
+      </div>
 
-      {/* ❤️ Heart */}
-      <FaHeart
-        onClick={handleWatchlist}
-        className="absolute top-3 right-3 text-white hover:text-red-500 cursor-pointer text-xl"
-      />
-
-      {/* Content */}
-      <div className="p-4">
-        <h2 className="font-semibold">{listing.title}</h2>
-        <p className="text-gray-500 text-sm">
-          {listing.location}, {listing.country}
-        </p>
-        <p className="font-bold text-red-500">
-          ₹{listing.price}
-        </p>
+      <div className="flex flex-col mt-1">
+        <div className="flex justify-between items-start">
+          <h2 className="font-semibold text-gray-900 truncate pr-4 text-base">{listing.location}, {listing.country}</h2>
+        </div>
+        <p className="text-gray-500 text-sm truncate">{listing.title}</p>
+        <div className="mt-1 flex items-baseline gap-1">
+          <span className="font-semibold text-gray-900">₹{listing.price?.toLocaleString("en-IN")}</span>
+          <span className="text-gray-600 text-sm">night</span>
+        </div>
       </div>
     </div>
   );

@@ -6,4 +6,8 @@ const userController = require('../controllers/userController');
 router.post("/register" , userController.registerUser);
 router.post("/login", userController.loginUser);
 
+// user watchlist
+router.post("/watchlist/:listingId", userController.addToWatchlist);
+router.get("/watchlist/:userId", userController.getWatchlist);
+
 module.exports = router;
