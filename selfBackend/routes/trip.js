@@ -2,7 +2,7 @@ const express = require("express");
 
 const router = express.Router();
 
-const tripController = require("../Controllers/tripController");
+const tripController = require("../controllers/tripController");
 
 router.post("/generate", tripController.generateTrip);
 
