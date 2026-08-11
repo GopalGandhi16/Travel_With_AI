@@ -1,0 +1,162 @@
+[
+{
+"destinationSlug":"goa",
+"title":"Scuba Diving at Grand Island",
+"description":"Explore coral reefs and marine life with certified instructors.",
+"category":"Adventure",
+"duration":"3 Hours",
+"price":2500,
+"currency":"INR",
+"rating":4.8,
+"images":[
+        "https://images.unsplash.com/photo-1544551763-46a013bb70d5"
+],
+"location":{"address":"Grand Island","latitude":15.613,"longitude":73.742},
+"bestTime":"Morning",
+"bookingRequired":true
+},
+{
+"destinationSlug":"goa",
+"title":"Parasailing at Calangute Beach",
+"description":"Enjoy aerial views of Goa's coastline.",
+"category":"Adventure",
+"duration":"20 Minutes",
+"price":1800,
+"currency":"INR",
+"rating":4.7,
+"images":[
+       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+],
+"location":{"address":"Calangute Beach","latitude":15.544,"longitude":73.755},
+"bestTime":"Morning",
+"bookingRequired":true
+},
+{
+"destinationSlug":"goa",
+"title":"Sunset Cruise on Mandovi River",
+"description":"Relax with live music and scenic sunset views.",
+"category":"Cruise",
+"duration":"2 Hours",
+"price":1200,
+"currency":"INR",
+"rating":4.6,
+"images":[
+    "https://images.unsplash.com/photo-1500375592092-40eb2168fd21"
+],
+"location":{"address":"Panaji","latitude":15.4909,"longitude":73.8278},
+"bestTime":"Evening",
+"bookingRequired":false
+},
+{
+"destinationSlug":"goa",
+"title":"Visit Aguada Fort",
+"description":"Historic Portuguese fort overlooking the Arabian Sea.",
+"category":"Sightseeing",
+"duration":"2 Hours",
+"price":0,
+"currency":"INR",
+"rating":4.7,
+"images":[
+     "https://images.unsplash.com/photo-1521295121783-8a321d551ad2"
+],
+"location":{"address":"Candolim","latitude":15.493,"longitude":73.773},
+"bestTime":"Morning",
+"bookingRequired":false
+},
+{
+"destinationSlug":"goa",
+"title":"Baga Beach Nightlife",
+"description":"Experience clubs, music and beachside cafes.",
+"category":"Nightlife",
+"duration":"4 Hours",
+"price":1000,
+"currency":"INR",
+"rating":4.8,
+"images":[
+  "https://images.unsplash.com/photo-1519046904884-53103b34b206"],
+"location":{"address":"Baga Beach","latitude":15.556,"longitude":73.751},
+"bestTime":"Night",
+"bookingRequired":false
+},
+{
+"destinationSlug":"jaipur",
+"title":"Amber Fort Tour",
+"category":"Heritage",
+"description":"Explore the majestic Amber Fort.",
+"duration":"3 Hours",
+"price":500,
+"currency":"INR",
+"rating":4.9,
+"images":[
+    "https://images.unsplash.com/photo-1477587458883-47145ed94245"
+],
+"location":{"address":"Amber Fort","latitude":26.9855,"longitude":75.8513},
+"bestTime":"Morning",
+"bookingRequired":false
+},
+{
+"destinationSlug":"jaipur",
+"title":"Hawa Mahal Visit",
+"category":"Sightseeing",
+"description":"Visit Jaipur's iconic Palace of Winds.",
+"duration":"1 Hour",
+"price":200,
+"currency":"INR",
+"rating":4.8,
+"images":[
+    "https://images.unsplash.com/photo-1599661046827-dacff0c0f09a"
+
+],
+"location":{"address":"Hawa Mahal","latitude":26.9239,"longitude":75.8267},
+"bestTime":"Morning",
+"bookingRequired":false
+},
+{
+"destinationSlug":"jaipur",
+"title":"City Palace Museum",
+"category":"Museum",
+"description":"Discover royal artifacts.",
+"duration":"2 Hours",
+"price":700,
+"currency":"INR",
+"rating":4.7,
+"images":[
+       "https://images.unsplash.com/photo-1599661046289-e31897846e41"
+],
+"location":{"address":"City Palace","latitude":26.9255,"longitude":75.8236},
+"bestTime":"Afternoon",
+"bookingRequired":false
+},
+{
+"destinationSlug":"jaipur",
+"title":"Shopping at Bapu Bazaar",
+"category":"Shopping",
+"description":"Buy handicrafts and textiles.",
+"duration":"2 Hours",
+"price":0,
+"currency":"INR",
+"rating":4.6,
+"images":[
+     "https://images.unsplash.com/photo-1518546305927-5a555bb7020d"
+],
+"location":{"address":"Bapu Bazaar","latitude":26.9176,"longitude":75.8184},
+"bestTime":"Evening",
+"bookingRequired":false
+},
+{
+"destinationSlug":"jaipur",
+"title":"Nahargarh Fort Sunset",
+"category":"Sightseeing",
+"description":"Watch sunset overlooking Jaipur.",
+"duration":"2 Hours",
+"price":250,
+"currency":"INR",
+"rating":4.8,
+"images":[
+     "https://images.unsplash.com/photo-1467269204594-9661b134dd2b"
+],
+"location":{"address":"Nahargarh Fort","latitude":26.9373,"longitude":75.8151},
+"bestTime":"Evening",
+"bookingRequired":false
+}
+]

@@ -9,11 +9,20 @@ const Watchlist = () => {
   const { user } = useAuth();
 
   useEffect(() => {
+    console.log("User:", user);
+
     if (user) {
+      console.log("Calling API...");
+
       axios
         .get(`http://localhost:3000/api/auth/watchlist/${user._id}`)
-        .then((res) => setListings(res.data))
-        .catch((err) => console.log(err));
+        .then((res) => {
+          console.log(res);
+          setListings(res.data || []);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
   }, [user]);
 

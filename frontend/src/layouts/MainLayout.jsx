@@ -1,11 +1,19 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/home/Footer";
+import { useLocation } from "react-router-dom";
+
+const noFooterRoutes = ["/login", "/signup"];
 
 const MainLayout = ({ children }) => {
+  const location = useLocation();
+  const showFooter = !noFooterRoutes.includes(location.pathname);
+
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <div className="pt-20">{children}</div>
+      <main className="flex-1">{children}</main>
+      {showFooter && <Footer />}
     </div>
   );
 };

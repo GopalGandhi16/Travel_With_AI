@@ -13,4 +13,4 @@ router.get("/:location " ,listingController.searchLocation);
 
 router.get("/search/:location", listingController.searchLocation);
 router.get("/:id", listingController.getListingById);
-module.exports = router;
+module.exports = router; 

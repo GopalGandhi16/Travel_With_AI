@@ -1,4 +1,4 @@
-const Listing = require("../models/Listing");
+const Listing = require("../Models/Listing");
 
 // GET all listings
 module.exports.getAllListings = async (req, res) => {
