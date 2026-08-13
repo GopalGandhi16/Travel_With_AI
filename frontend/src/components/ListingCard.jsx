@@ -18,7 +18,7 @@ const ListingCard = ({ listing }) => {
 
     try {
  await axios.post(
-  `http://localhost:3000/api/auth/watchlist/${listing._id}`,
+  `${import.meta.env.VITE_API_URL}/api/auth/watchlist/${listing._id}`,
   {
     userId: user._id,
   }

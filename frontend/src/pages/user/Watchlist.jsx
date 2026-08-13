@@ -15,7 +15,7 @@ const Watchlist = () => {
       console.log("Calling API...");
 
       axios
-        .get(`http://localhost:3000/api/auth/watchlist/${user._id}`)
+        .get(`${import.meta.env.VITE_API_URL}/api/auth/watchlist/${user._id}`)
         .then((res) => {
           console.log(res);
           setListings(res.data || []);

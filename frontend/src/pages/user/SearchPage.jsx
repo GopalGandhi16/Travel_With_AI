@@ -20,7 +20,7 @@ const SearchPage = () => {
     setLoading(true);
 
     axios
-      .get(`http://localhost:3000/api/destinations/search?q=${location}`)
+      .get(`${import.meta.env.VITE_API_URL}/api/destinations/search?q=${location}`)
       .then((res) => {
          console.log(res.data);
         setDestination(res.data.destination);

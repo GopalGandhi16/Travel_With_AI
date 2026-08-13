@@ -43,7 +43,7 @@ const review = reviews[activeReview];
   
   useEffect(() => {
   axios
-    .get(`http://localhost:3000/api/destinations/${slug}/reviews`)
+    .get(`${import.meta.env.VITE_API_URL}/api/destinations/${slug}/reviews`)
     .then((res) => {
       setReviews(res.data.data || []);
     })
@@ -61,10 +61,10 @@ useEffect(() => {
         restaurantsRes,
         activitiesRes,
       ] = await Promise.all([
-        axios.get(`http://localhost:3000/api/destinations/${slug}`),
-        axios.get(`http://localhost:3000/api/destinations/${slug}/hotels`),
-        axios.get(`http://localhost:3000/api/destinations/${slug}/restaurants`),
-        axios.get(`http://localhost:3000/api/destinations/${slug}/activities`),
+        axios.get(`${import.meta.env.VITE_API_URL}/api/destinations/${slug}`),
+        axios.get(`${import.meta.env.VITE_API_URL}/api/destinations/${slug}/hotels`),
+        axios.get(`${import.meta.env.VITE_API_URL}/api/destinations/${slug}/restaurants`),
+        axios.get(`${import.meta.env.VITE_API_URL}/api/destinations/${slug}/activities`),
       ]);
 
       setDestination(destinationRes.data.data);
@@ -94,7 +94,7 @@ const handleReviewSubmit = async (e) => {
 
   try {
     const res = await axios.post(
-      `http://localhost:3000/api/destinations/${slug}/reviews`,
+      `${import.meta.env.VITE_API_URL}/api/destinations/${slug}/reviews`,
       {
         userId: user._id,
         rating,

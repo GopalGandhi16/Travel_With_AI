@@ -33,7 +33,7 @@ const { user } = useAuth();
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/hotels/${hotelId}`)
+      .get(`${import.meta.env.VITE_API_URL}/api/hotels/${hotelId}`)
       .then((res) => setHotel(res.data.data))
       .catch(console.log);
   }, [hotelId]);
@@ -106,7 +106,7 @@ const handlePayment = async () => {
 
     // Create Razorpay Order
     const { data: orderData } = await axios.post(
-      "http://localhost:3000/api/payment/create-order",
+      `${import.meta.env.VITE_API_URL}/api/payment/create-order`,
       {
         amount: totalAmount,
       }
@@ -158,7 +158,7 @@ const handlePayment = async () => {
   try {
 
     const bookingResponse = await axios.post(
-      "http://localhost:3000/api/auth/bookings",
+      `${import.meta.env.VITE_API_URL}/api/auth/bookings`,
       {
         userId: user._id,
         hotelId: hotel._id,

@@ -33,7 +33,7 @@ const Signup = () => {
 
     setIsLoading(true);
     try {
-      await axios.post("http://localhost:3000/api/auth/register", form);
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/register`, form);
       toast.success("Registered successfully! Please login.");
       navigate("/login");
     } catch (err) {

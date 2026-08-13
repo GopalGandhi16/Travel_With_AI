@@ -67,7 +67,7 @@ const [loading, setLoading] = useState(false);
     setLoading(true);
 
     const response = await axios.post(
-  "http://localhost:3000/api/trips/generate",
+  `${import.meta.env.VITE_API_URL}/api/trips/generate`,
   {
     userId: user?._id,
     ...formData,

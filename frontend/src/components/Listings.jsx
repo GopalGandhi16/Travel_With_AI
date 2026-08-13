@@ -8,7 +8,7 @@ const Listings = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/destinations")
+      .get(`${import.meta.env.VITE_API_URL}/api/destinations`)
       .then((res) => {
         console.log(res.data);          // Entire object
         console.log(res.data.data);     // Array

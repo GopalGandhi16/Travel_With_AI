@@ -15,7 +15,7 @@ const MyBookings = () => {
 
     axios
       .get(
-        `http://localhost:3000/api/auth/bookings/${user._id}`
+        `${import.meta.env.VITE_API_URL}/api/auth/bookings/${user._id}`
       )
       .then((res) => {
 
